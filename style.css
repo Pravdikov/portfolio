@@ -1,174 +1,94 @@
-body {
+:root{
+  --bg:#0f0f14;
+  --text:#111; /* Был #e9e9ee, теперь тёмный */
+  --accent:#ff8c00;
+  --container:1000px;
+  --gap:20px;
+  --radius:10px;
+  --header-height:68px;
+}
+
+.portfolio{
+  background: #fafafa;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
   font-family: 'Roboto', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  background-color: #fafafa;
-  color: #333;
+  background: #fff;
+  color:var(--text);
+  line-height:1.5;
 }
 
-/* Шапка */
-header {
+/* контейнер */
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding: 0 16px;
+}
+
+/* header */
+.site-header{
   background: #222;
-  color: #fff;
-  padding: 15px 20px;
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:var(--header-height);
+}
+.logo{font-weight:700; text-decoration:none; color:inherit}
+
+/* nav */
+.site-nav ul{display:flex; gap:18px; list-style:none; margin:0; padding:0; align-items:center}
+.site-nav a{color:#fff; text-decoration:none; padding:8px 10px}
+.btn-primary{background:var(--accent); color:#fff; padding:8px 12px; border-radius:20px; text-decoration:none}
+
+/* nav toggle (mobile) */
+.nav-toggle{display:none; background:none; border:0; cursor:pointer}
+.hamburger{display:block; width:26px; height:2px; background:#fff; position:relative}
+.hamburger::before, .hamburger::after{
+  content:""; position:absolute; left:0; right:0; height:2px; background:#fff;
+}
+.hamburger::before{top:-8px} .hamburger::after{bottom:-8px}
+
+/* sections */
+.section{padding:32px 0}
+.cards{display:flex; gap:20px; flex-wrap:wrap}
+.card{background:#f5f5f5; color:#111; padding:16px; border-radius:10px; flex:1; min-width:220px}
+
+section:nth-child(even) {
+  background: #fafafa; /* Светло-серый фон */
 }
 
-header h1 {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-nav ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 0;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #ffd700;
-}
-
-/* Основной контент */
-main {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 15px;
+section:nth-child(odd) {
+  background: #fff; /* Белый фон */
 }
 
 section {
-  padding: 30px 0;
+  padding: 60px 0; /* Отступы сверху и снизу */
 }
 
-section h2 {
-  margin-bottom: 15px;
-  font-size: 1.4rem;
-  color: #222;
+/* form */
+.contact-form{max-width:480px; background:#f7f7f7; padding:12px; border-radius:8px}
+.contact-form input, .contact-form textarea{width:100%; padding:10px; border:1px solid #ddd; border-radius:6px; margin-bottom:8px}
+.contact-form button{background:var(--accent); color:#fff; border:0; padding:10px 14px; border-radius:8px}
+
+/* responsive */
+@media (max-width:768px){
+  .site-nav{position:absolute; top:var(--header-height); left:0; right:0; background:#222; transform:translateY(-120%); transition:transform .25s ease}
+  .site-nav.open{transform:translateY(0)}
+  .site-nav ul{flex-direction:column; padding:12px}
+  .nav-toggle{display:block}
+  .cards{flex-direction:column}
 }
 
-/* Чередование фона секций */
-section:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-/* Портфолио */
-#portfolio img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* Форма */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 400px;
-  padding: 15px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-}
-
-input, textarea {
-  padding: 10px;
-  font-size: 1em;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-input:focus, textarea:focus {
-  border-color: #333;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  outline: none;
-}
-
-button {
-  background: #333;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  padding: 12px;
-  border-radius: 5px;
-  font-size: 1em;
-  transition: background 0.3s ease;
-}
-
-button:hover {
-  background: #555;
-}
-
-/* Футер */
-footer {
-  background: #222;
-  color: #fff;
-  text-align: center;
-  padding: 15px;
-  font-size: 0.9em;
-}
-
-footer a {
-  color: #ffd700;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* Адаптивное меню */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  header h1 {
-    font-size: 1.2rem;
-  }
-}
-
-/* Анимация появления */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-#portfolio .fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-#portfolio .fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Задержки появления */
-#portfolio .fade-in:nth-child(1) {
-  transition-delay: 0.2s;
-}
-#portfolio .fade-in:nth-child(2) {
-  transition-delay: 0.4s;
-}
-#portfolio .fade-in:nth-child(3) {
-  transition-delay: 0.6s;
-}
+/* animation */
+.fade-in{opacity:0; transform: translateY(20px); transition: all .6s ease}
+.fade-in.visible{opacity:1; transform: translateY(0)}

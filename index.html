@@ -1,110 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Front-end developer Dmitry Pravdikov — portfolio and contact page."
-    />
-    <title>Front-end Developer - Dmitry Pravdikov</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Front-end developer Dmitry Pravdikov — portfolio and contact page.">
+  <title>Dmitry Pravdikov — Front-end Developer</title>
 
-  <script src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="#home">Dmitry Pravdikov</a>
 
-  <body>
-    <header>
-      <h1>Front-end developer Dmitry Pravdikov</h1>
-      <nav>
+      <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" role="navigation" aria-label="Main navigation">
         <ul>
-          <li><a href="#about">About me</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="#form" class="btn-primary">FORM</a></li>
         </ul>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <section id="about" class="fade-in">
-        <h2>About me</h2>
-        <p>
-          I'm a front-end developer passionate about creating responsive and
-          accessible websites. I enjoy working with HTML, CSS, and JavaScript,
-          and I am currently learning React to build modern web applications.
-        </p>
-      </section>
+  <main id="home" class="container">
+    <section id="about" class="section about">
+      <h1>About me</h1>
+      <p>I'm a front-end developer passionate about creating responsive and accessible websites. I enjoy working with HTML, CSS and JavaScript, and I am learning React.</p>
+    </section>
 
-      <section id="portfolio">
-        <h2>Portfolio</h2>
+    <section id="portfolio" class="section portfolio">
+      <h2>Portfolio</h2>
 
-        <figure class="fade-in">
-          <img
-            src="https://via.placeholder.com/400x250"
-            alt="Project example"
-          />
-          <figcaption>
-            Website for an online teacher of foreign languages
-          </figcaption>
-        </figure>
+      <div class="cards">
+        <article class="card fade-in">
+          <img src="https://via.placeholder.com/400x250" alt="Project example">
+          <h3>Online teacher site</h3>
+          <p>Website for an online teacher of foreign languages.</p>
+        </article>
+      </div>
+    </section>
 
-        <figure class="fade-in">
-          <img
-            src="https://via.placeholder.com/400x250"
-            alt="Project example"
-          />
-          <figcaption>Landing page for a fitness trainer</figcaption>
-        </figure>
+    <section id="contact" class="section contact">
+      <h2>Contact</h2>
 
-        <figure class="fade-in">
-          <img
-            src="https://via.placeholder.com/400x250"
-            alt="Project example"
-          />
-          <figcaption>E-commerce shop design</figcaption>
-        </figure>
-      </section>
+      <form id="contactForm" class="contact-form" novalidate>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required>
 
-      <section id="contact" class="fade-in">
-        <h2>Contact</h2>
-        <form action="#" method="post" novalidate>
-          <div>
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" required />
-          </div>
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" type="tel" required pattern="[\+0-9\s\-()]{7,}">
 
-          <div>
-            <label for="phone">Phone</label>
-            <input
-              id="phone"
-              name="phone"
-              type="tel"
-              required
-              pattern="[\+0-9\s\-()]{7,}"
-            />
-          </div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
 
-          <div>
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required />
-          </div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4"></textarea>
 
-          <div>
-            <label for="message">Message</label>
-            <textarea name="message" id="message" rows="4"></textarea>
-          </div>
+        <button type="submit" class="btn-primary">Send</button>
+        <p class="form-feedback" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
 
-          <button type="submit">Send</button>
-        </form>
-      </section>
-    </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Dmitry Pravdikov — <a href="https://github.com/Pravdikov" target="_blank" rel="noopener">GitHub</a></p>
+    </div>
+  </footer>
 
-    <footer>
-      <p>© 2025 Dmitry Pravdikov <a href="#">GitHub</a></p>
-    </footer>
-  </body>
+  <script src="script.js" defer></script>
+</body>
 </html>
