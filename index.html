@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Front-end developer Dmitry Pravdikov — portfolio and contact page."
+    />
+    <title>Front-end Developer - Dmitry Pravdikov</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <script src="script.js"></script>
+
+  <body>
+    <header>
+      <h1>Front-end developer Dmitry Pravdikov</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About me</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about" class="fade-in">
+        <h2>About me</h2>
+        <p>
+          I'm a front-end developer passionate about creating responsive and
+          accessible websites. I enjoy working with HTML, CSS, and JavaScript,
+          and I am currently learning React to build modern web applications.
+        </p>
+      </section>
+
+      <section id="portfolio">
+        <h2>Portfolio</h2>
+
+        <figure class="fade-in">
+          <img
+            src="https://via.placeholder.com/400x250"
+            alt="Project example"
+          />
+          <figcaption>
+            Website for an online teacher of foreign languages
+          </figcaption>
+        </figure>
+
+        <figure class="fade-in">
+          <img
+            src="https://via.placeholder.com/400x250"
+            alt="Project example"
+          />
+          <figcaption>Landing page for a fitness trainer</figcaption>
+        </figure>
+
+        <figure class="fade-in">
+          <img
+            src="https://via.placeholder.com/400x250"
+            alt="Project example"
+          />
+          <figcaption>E-commerce shop design</figcaption>
+        </figure>
+      </section>
+
+      <section id="contact" class="fade-in">
+        <h2>Contact</h2>
+        <form action="#" method="post" novalidate>
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+
+          <div>
+            <label for="phone">Phone</label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              required
+              pattern="[\+0-9\s\-()]{7,}"
+            />
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+
+          <div>
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="4"></textarea>
+          </div>
+
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Dmitry Pravdikov <a href="#">GitHub</a></p>
+    </footer>
+  </body>
+</html>
